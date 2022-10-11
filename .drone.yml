@@ -1,0 +1,44 @@
+kind: pipeline
+type: kubernetes
+name: RedisBuild
+
+steps:
+- name: lint Trivy-server chart
+  image: pelotech/drone-helm3
+  settings:
+    mode: lint
+    chart: ./
+    value_files: ./values.yaml
+
+- name: Deploy Trivy Server dry-run.
+  image: pelotech/drone-helm3
+  settings:
+    namespace: trivy-redis
+    mode: upgrade
+    chart: ./
+    release: trivy-server
+    value_files: ./values.yaml
+    dry-run: 1
+  environment:
+    API_SERVER:
+      from_secret: k8s_server
+    KUBE_TOKEN:
+      from_secret: k8s_token
+    KUBE_CERTIFICATE:
+      from_secret: k8s_crt
+
+- name: Deploy Redis.
+  image: pelotech/drone-helm3
+  settings:
+    namespace: trivy-redis
+    mode: upgrade
+    chart: ./
+    release: trivy-server
+    value_files: ./values.yaml
+  environment:
+    API_SERVER:
+      from_secret: k8s_server
+    KUBE_TOKEN:
+      from_secret: k8s_token
+    KUBE_CERTIFICATE:
+      from_secret: k8s_crt
