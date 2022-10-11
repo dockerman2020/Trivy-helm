@@ -24,7 +24,7 @@ steps:
       from_secret: k8s_server
     KUBE_TOKEN:
       from_secret: k8s_token
-    KUBE_CERTIFICATE:
+    KUBERNETES_CERTIFICATE:
       from_secret: k8s_crt
 
 - name: Deploy Redis.
@@ -40,5 +40,5 @@ steps:
       from_secret: k8s_server
     KUBE_TOKEN:
       from_secret: k8s_token
-    KUBE_CERTIFICATE:
+    KUBERNETES_CERTIFICATE:
       from_secret: k8s_crt
