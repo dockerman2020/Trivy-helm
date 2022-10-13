@@ -35,6 +35,10 @@ steps:
     chart: ./
     release: trivy-server
     value_files: ./values.yaml
+    history_max: 10
+    values: 
+    - "trivy.cache.redis.enabled=true"
+    - "trivy.cache.redis.url=redis://redis-master.trivy-redis.svc.cluster.local:6379"
   environment:
     API_SERVER:
       from_secret: k8s_server
