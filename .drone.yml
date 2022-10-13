@@ -38,7 +38,7 @@ steps:
     history_max: 10
     values: 
     - "trivy.cache.redis.enabled=true"
-    - "trivy.cache.redis.url=redis://redis-master.trivy-redis.svc.cluster.local:6379"
+    - "trivy.cache.redis.url=redis://redis-server-master.trivy-redis.svc.cluster.local:6379"
   environment:
     API_SERVER:
       from_secret: k8s_server
