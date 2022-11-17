@@ -27,7 +27,7 @@ steps:
     KUBERNETES_CERTIFICATE:
       from_secret: k8s_crt
 
-- name: Deploy Redis.
+- name: Deploy Trivy.
   image: pelotech/drone-helm3
   settings:
     namespace: trivy-redis
