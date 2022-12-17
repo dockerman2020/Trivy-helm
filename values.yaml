@@ -123,7 +123,8 @@ trivy:
   # existingSecret if an existing secret has been created outside the chart.
   # Overrides gitHubToken, registryUsername, registryPassword, serverToken
   existingSecret: ""
-  # Image SHA1 hash
+  # Image SHA1 hash - The sha for the image to be used. Check under tags in the Docker hub repo. 
+  # This is called from statefulsets.yaml - spec.containers
   sha: "@sha256:f2d55cb8ab5278a53f2eef1f80a4260aa46b2ef7a86c401cec16daa6a8a65558"
 
 service:

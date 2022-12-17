@@ -67,7 +67,6 @@ spec:
         - name: main
           image: {{ template "trivy.imageRef" . }}{{ .Values.trivy.sha }}
           # image: {{ template "trivy.imageRef" . }}
-          # image: aquasec/trivy:0.35.0@sha256:f2d55cb8ab5278a53f2eef1f80a4260aa46b2ef7a86c401cec16daa6a8a65558
           imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
           {{- if .Values.securityContext }}
           securityContext:
