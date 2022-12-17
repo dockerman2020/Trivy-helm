@@ -9,6 +9,11 @@ steps:
     mode: lint
     chart: ./
     value_files: ./values.yaml
+  when:
+    event:
+    - push
+    - pull_request
+    - custom
 
 - name: Deploy Trivy Server dry-run.
   image: pelotech/drone-helm3
@@ -26,6 +31,11 @@ steps:
       from_secret: k8s_token
     KUBERNETES_CERTIFICATE:
       from_secret: k8s_crt
+  when:
+    event:
+    - push
+    - pull_request
+    - custom
 
 - name: Deploy Trivy.
   image: pelotech/drone-helm3
@@ -46,3 +56,8 @@ steps:
       from_secret: k8s_token
     KUBERNETES_CERTIFICATE:
       from_secret: k8s_crt
+  when:
+    event:
+    - push
+    - pull_request
+    - custom
