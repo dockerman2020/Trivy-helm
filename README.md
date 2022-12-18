@@ -1,3 +1,5 @@
+[![Build Status](https://2259-86-18-82-206.eu.ngrok.io/api/badges/dockerman2020/Trivy-helm/status.svg)](https://2259-86-18-82-206.eu.ngrok.io/dockerman2020/Trivy-helm)
+
 # Trivy Scanner
 
 Trivy vulnerability scanner standalone installation.
