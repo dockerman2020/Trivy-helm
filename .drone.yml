@@ -3,18 +3,17 @@ type: kubernetes
 name: TrivyBuild
 
 steps:
-  - name: clone_repos
-    image: alpine/git
-    commands:
-      - git clone git@github.com:dockerman2020/trivy-helm.git
-    when:
-      branch:
-        include:
-        - main
-        # - feature/*
-      event: [push, pull_request]
+- name: clone_repos
+  image: alpine/git
+  commands:
+    - git clone git@github.com:dockerman2020/trivy-helm.git
+  when:
+    branch:
+      include:
+      - main
+      # - feature/*
+    event: [push, pull_request]
 
-# Define the steps..
 - name: lint Trivy-server chart
   image: pelotech/drone-helm3
   settings:
