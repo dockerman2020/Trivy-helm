@@ -3,6 +3,7 @@ type: kubernetes
 name: RedisBuild
 
 steps:
+# Define the steps.
 - name: lint Trivy-server chart
   image: pelotech/drone-helm3
   settings:
