@@ -129,6 +129,7 @@ trivy:
   # Image tag - The Quay tag for Trivy Server absiplant/trivy_scanner.
   tag: "ff11150ff6dfd283eb63099832f9c6a0c5914af1"
   quayReg: "quay.io"
+  repo: "absiplant/trivy_scanner"
 
 service:
   # If specified, the name used for the Trivy service.
