@@ -125,7 +125,11 @@ trivy:
   existingSecret: ""
   # Image SHA1 hash - The sha for the image to be used. Check under tags in the Docker hub repo. 
   # This is called from statefulsets.yaml - spec.containers
-  sha: "@sha256:f2d55cb8ab5278a53f2eef1f80a4260aa46b2ef7a86c401cec16daa6a8a65558"
+  # sha: "@sha256:f2d55cb8ab5278a53f2eef1f80a4260aa46b2ef7a86c401cec16daa6a8a65558"
+  # Image tag - The Quay tag for Trivy Server absiplant/trivy_scanner.
+  tag: "ff11150ff6dfd283eb63099832f9c6a0c5914af1"
+  quayReg: "quay.io"
+  repo: "absiplant/trivy_scanner"
 
 service:
   # If specified, the name used for the Trivy service.
