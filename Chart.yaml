@@ -11,5 +11,5 @@ sources:
 - https://github.com/aquasecurity/trivy
 # version: 0.4.17
 version: 0.5.0
-registry: "quay.io"
+quayReg: "quay.io"
 repo: "absiplant/trivy_scanner"
