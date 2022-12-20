@@ -65,7 +65,6 @@ spec:
       {{- end }}
       containers:
         - name: main
-          # image: quay.io/absiplant/trivy_scanner:ff11150ff6dfd283eb63099832f9c6a0c5914af1
           # image: {{ template "trivy.imageRef" . }}{{ .Values.trivy.sha }}
           image: {{ .Values.trivy.quayReg }}/{{ .Values.trivy.repo }}:{{ .Values.trivy.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
