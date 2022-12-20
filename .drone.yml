@@ -39,7 +39,6 @@ steps:
         - pull_request
         - custom
 
-# Deploy step.
 - name: Deploy Trivy.
   image: pelotech/drone-helm3
   settings:
