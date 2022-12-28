@@ -119,7 +119,7 @@ trivy:
   # If you want to add custom labels to your statefulset and podTemplate
   labels: {}
   # serverToken is the token to authenticate Trivy client with Trivy server.
-  # serverToken: 5b633747beb3e1907c55d5d3ffebc377
+  # serverToken:
   # existingSecret if an existing secret has been created outside the chart.
   # Overrides gitHubToken, registryUsername, registryPassword, serverToken
   existingSecret: "trivy-tok"
